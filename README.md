@@ -7,7 +7,7 @@
 ## Download
 
 ```
-git clone https://github.com/JordonGarza/DatabasesProject.git
+git clone https://github.com/Brianm0823/AdminPortal.git
 ```
 
 ## Run
