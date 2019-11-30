@@ -62,12 +62,7 @@ body {
   .article-content {
     white-space: pre-line;
   }
-  
-  .book-img {
-    height: 110px;
-    width: 80px;
-    
-  }
+
   
   .available {
     float:right;
@@ -119,4 +114,8 @@ body {
   
   .account-box {
     margin-top: 80px;
+  }
+
+  .col-md-8 {
+    margin-top: 70px;
   }
