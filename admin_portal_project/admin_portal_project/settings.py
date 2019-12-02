@@ -87,8 +87,12 @@ WSGI_APPLICATION = 'admin_portal_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portaldb',
+        'USER': 'admin',
+        'PASSWORD': 'cosc4351',
+        'HOST': 'admin-portal-db.c7xooysbfjhv.us-east-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
@@ -151,3 +155,4 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'none' 

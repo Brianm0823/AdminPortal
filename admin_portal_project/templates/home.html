@@ -2,14 +2,24 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-  Hi {{ user.email }}!
-  <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+  Welcome {{ user.email }}!
+  <br><br>
+  {% if groups %}
+    Groups:
+    {% for group in groups %}
+      {{ group }}
+    {% endfor %}  
+    <br><br>
+    <p>Links:</p>
+    {% for permission in permissions %}
+        <a href="#"> {{ permission }}</a>
+        <br>
+    {% endfor %} 
+  {% else %}
+    You are not an admin, please contact an administrator for help.
+  {% endif %}
 {% else %}
   <p>You are not logged in</p>
-  <a href="{% url 'account_login' %}">Log In</a> |
-  <a href="{% url 'account_signup' %}">Sign Up</a>
 {% endif %}
-
-
 
 {% endblock content %}

@@ -1,8 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from users.models import Links
 
 def home(request):
-    return render(request, 'home.html')
+    perms = request.user.get_group_permissions()
+    group = request.user.groups.all()
+    for g in group:
+        print(g)
+    print("permissions: ")
+    for permission in perms:
+        print(permission)
+    data = {
+        'permissions': perms,
+        'groups': group,
+    }
+    return render(request, 'home.html', data)
 
 
 def login(request):
