@@ -21,61 +21,67 @@ def login(request):
     return render(request, 'login.html')
 
 def helpdesk(request):
-    return HttpResponse('<hi>Help Desk<hi>')
+    return HttpResponse('<h1>Help Desk<h1>')
+
+def manageuseraccounts(request):
+    return HttpResponse('<h1>Manage User Accounts<h1>')
+
+def assignroles(request):
+    return HttpResponse('<h1>Assign Roles<h1>')
 
 def financereports(request):
-    return HttpResponse('<hi>Finance Reports<hi>')
+    return HttpResponse('<h1>Finance Reports<h1>')
 
 def accountspayable(request):
-    return HttpResponse('<hi>Accounts Payable<hi>')
+    return HttpResponse('<h1>Accounts Payable<h1>')
 
 def accountsrecievable(request):
-    return HttpResponse('<hi>Accounts Receivable<hi>')
+    return HttpResponse('<h1>Accounts Receivable<h1>')
 
 def tax(request):
-    return HttpResponse('<hi>Tax<hi>')
+    return HttpResponse('<h1>Tax<h1>')
 
 def salesreport(request):
-    return HttpResponse('<hi>Sales Report<hi>')
+    return HttpResponse('<h1>Sales Report<h1>')
 
 def salesleads(request):
-    return HttpResponse('<hi>Sales Leads<hi>')
+    return HttpResponse('<h1>Sales Leads<h1>')
 
 def salesdemo(request):
-    return HttpResponse('<hi>Sales Demo<hi>')
+    return HttpResponse('<h1>Sales Demo<h1>')
 
 def newhire(request):
-    return HttpResponse('<hi>New Hire<hi>')
+    return HttpResponse('<h1>New Hire<h1>')
 
 def onboarding(request):
-    return HttpResponse('<hi>On boarding<hi>')
+    return HttpResponse('<h1>On boarding<h1>')
 
 def benefits(request):
-    return HttpResponse('<hi>Benefits<hi>')
+    return HttpResponse('<h1>Benefits<h1>')
 
 def payroll(request):
-    return HttpResponse('<hi>Payroll<hi>')
+    return HttpResponse('<h1>Payroll<h1>')
 
 def terminations(request):
-    return HttpResponse('<hi>Terminations<hi>')
+    return HttpResponse('<h1>Terminations<h1>')
 
 def hrreports(request):
-    return HttpResponse('<hi>Hr Reports<hi>')
+    return HttpResponse('<h1>Hr Reports<h1>')
 
 def appmonitoring(request):
-    return HttpResponse('<hi>App monitoring<hi>')
+    return HttpResponse('<h1>App Monitoring<h1>')
 
 def techsupport(request):
-    return HttpResponse('<hi>Tech Support<hi>')
+    return HttpResponse('<h1>Tech Support<h1>')
 
 def appdev(request):
-    return HttpResponse('<hi>App Development<hi>')
+    return HttpResponse('<h1>App Development<h1>')
 
 def appadmin(request):
-    return HttpResponse('<hi>App admin<hi>')
+    return HttpResponse('<h1>App Admin<h1>')
 
 def releasemanagement(request):
-    return HttpResponse('<hi>Release Management<hi>')
+    return HttpResponse('<h1>Release Management<h1>')
 
 
 

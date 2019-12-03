@@ -219,7 +219,7 @@ class Links(models.Model):
             ('accessto_sales_demo', 'Access to Sales Demo link'),
             #HR_ADMIN
             ('accessto_new_hire', 'Access to New Hire link'),  
-            ('accessto_on-boarding', 'Access to On-boarding link'), 
+            ('accessto_on-boarding', 'Access to On-boarding link'),
             ('accessto_benefits', 'Access to Benefits link'), 
             ('accessto_payroll', 'Access to Payroll link'),
             ('accessto_Terminations', 'Access to Terminations link'),

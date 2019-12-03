@@ -8,13 +8,57 @@
     Groups:
     {% for group in groups %}
       {{ group }}
-    {% endfor %}  
+    {% endfor %}
     <br><br>
     <p>Links:</p>
     {% for permission in permissions %}
-        <a href="#"> {{ permission }}</a>
+        {% if permission == 'users.accessto_help_desk' %}
+            <a href="{% url 'helpdesk' %}"> Help Desk</a>
+        {% elif permission == 'users.accessto_manage_user_accounts' %}
+            <a href="{% url 'manageuseraccounts' %}"> Manage User Accounts</a>
+        {% elif permission == 'users.accessto_assign_roles' %}
+            <a href="{% url 'assignroles' %}"> Assign Roles</a>
+        {% elif permission == 'users.accessto_sales_reports' %}
+            <a href="{% url 'salesreport' %}"> Sales Reports</a>
+        {% elif permission == 'users.accessto_sales_leads' %}
+            <a href="{% url 'salesleads' %}"> Sales Leads</a>
+        {% elif permission == 'users.accessto_sales_demo' %}
+            <a href="{% url 'salesdemo' %}"> Sales Demo</a>
+        {% elif permission == 'users.accessto_finance_reports' %}
+            <a href="{% url 'financereports' %}"> Finance Reports</a>
+        {% elif permission == 'users.accessto_accounts_payable' %}
+            <a href="{% url 'accountspayable' %}"> Accounts Payable</a>
+        {% elif permission == 'users.accessto_accounts_receivable' %}
+            <a href="{% url 'accountsrecievable' %}"> Accounts Receivable</a>
+        {% elif permission == 'users.accessto_tax' %}
+            <a href="{% url 'tax' %}"> Tax </a>
+        {% elif permission == 'users.accessto_new_hire' %}
+            <a href="{% url 'newhire' %}"> New Hire </a>
+        {% elif permission == 'users.accessto_on-boarding' %}
+            <a href="{% url 'onboarding' %}"> On Boarding</a>
+        {% elif permission == 'users.accessto_benefits' %}
+            <a href="{% url 'benefits' %}"> Benefits</a>
+        {% elif permission == 'users.accessto_payroll' %}
+            <a href="{% url 'payroll' %}"> Payroll</a>
+        {% elif permission == 'users.accessto_Terminations' %}
+            <a href="{% url 'terminations' %}"> Terminations</a>
+        {% elif permission == 'users.accessto_hr_reports' %}
+            <a href="{% url 'hrreports' %}"> HR Reports</a>
+        {% elif permission == 'users.accessto_application_monitoring' %}
+            <a href="{% url 'appmonitoring' %}"> Application Monitoring </a>
+        {% elif permission == 'users.accessto_tech_support' %}
+            <a href="{% url 'techsupport' %}"> Tech Support </a>
+        {% elif permission == 'users.accessto_app_development' %}
+            <a href="{% url 'appdev' %}"> App Development</a>
+        {% elif permission == 'users.accessto_app_admin' %}
+            <a href="{% url 'appadmin' %}"> App Admin</a>
+        {% elif permission == 'users.accessto_release_management' %}
+            <a href="{% url 'releasemanagement' %}"> Release Management</a>
+        {% else %}
+            <a href="#"> {{ permission }}</a>
+        {% endif %}
         <br>
-    {% endfor %} 
+    {% endfor %}
   {% else %}
     You are not an admin, please contact an administrator for help.
   {% endif %}
