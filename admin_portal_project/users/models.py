@@ -111,55 +111,6 @@ class DjangoSite(models.Model):
         db_table = 'django_site'
 
 
-class SocialaccountSocialaccount(models.Model):
-    provider = models.CharField(max_length=30)
-    uid = models.CharField(max_length=191)
-    last_login = models.DateTimeField()
-    date_joined = models.DateTimeField()
-    extra_data = models.TextField()
-    user = models.ForeignKey('UsersCustomuser', models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'socialaccount_socialaccount'
-        unique_together = (('provider', 'uid'),)
-
-
-class SocialaccountSocialapp(models.Model):
-    provider = models.CharField(max_length=30)
-    name = models.CharField(max_length=40)
-    client_id = models.CharField(max_length=191)
-    secret = models.CharField(max_length=191)
-    key = models.CharField(max_length=191)
-
-    class Meta:
-        managed = False
-        db_table = 'socialaccount_socialapp'
-
-
-class SocialaccountSocialappSites(models.Model):
-    socialapp = models.ForeignKey(SocialaccountSocialapp, models.DO_NOTHING)
-    site = models.ForeignKey(DjangoSite, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'socialaccount_socialapp_sites'
-        unique_together = (('socialapp', 'site'),)
-
-
-class SocialaccountSocialtoken(models.Model):
-    token = models.TextField()
-    token_secret = models.TextField()
-    expires_at = models.DateTimeField(blank=True, null=True)
-    account = models.ForeignKey(SocialaccountSocialaccount, models.DO_NOTHING)
-    app = models.ForeignKey(SocialaccountSocialapp, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'socialaccount_socialtoken'
-        unique_together = (('app', 'account'),)
-
-
 class UsersCustomuser(models.Model):
     password = models.CharField(max_length=128)
     last_login = models.DateTimeField(blank=True, null=True)

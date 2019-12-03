@@ -28,9 +28,10 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'portal-home' %}">Home</a>
-                    <a class="nav-item nav-link" href="{% url 'portal-home' %}">Portal</a>
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="#">My Account</a>
+                        {% if groups or user.is_superuser %}
+                            <a class="nav-item nav-link" href="admin/">Admin</a>
+                        {% endif %}
                     {% endif %}
                     </div>
                     <!-- Navbar Right Side -->
