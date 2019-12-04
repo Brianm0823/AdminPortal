@@ -2,64 +2,93 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-  Welcome {{ user.email }}!
-  <br><br>
-  {% if groups %}
-    {% if user.is_superuser %}
-      You are a superuser and have access to every link.
-    {% else %}
-      Groups:<br>
-      {% for group in groups %}
-        {{ group }} <br>
-      {% endfor %}
-    {% endif %}
-    <br><br>
-    <p>Links:</p>
-    {% for permission in permissions %}
-        {% if permission == 'users.accessto_help_desk' %}
-            <a href="{% url 'helpdesk' %}"> Help Desk</a><br>
-        {% elif permission == 'users.accessto_manage_user_accounts' %}
-            <a href="{% url 'manageuseraccounts' %}"> Manage User Accounts</a><br>
-        {% elif permission == 'users.accessto_assign_roles' %}
-            <a href="{% url 'assignroles' %}"> Assign Roles</a><br>
-        {% elif permission == 'users.accessto_sales_reports' %}
-            <a href="{% url 'salesreport' %}"> Sales Reports</a><br>
-        {% elif permission == 'users.accessto_sales_leads' %}
-            <a href="{% url 'salesleads' %}"> Sales Leads</a><br>
-        {% elif permission == 'users.accessto_sales_demo' %}
-            <a href="{% url 'salesdemo' %}"> Sales Demo</a><br>
-        {% elif permission == 'users.accessto_finance_reports' %}
-            <a href="{% url 'financereports' %}"> Finance Reports</a><br>
-        {% elif permission == 'users.accessto_accounts_payable' %}
-            <a href="{% url 'accountspayable' %}"> Accounts Payable</a><br>
-        {% elif permission == 'users.accessto_accounts_receivable' %}
-            <a href="{% url 'accountsrecievable' %}"> Accounts Receivable</a><br>
-        {% elif permission == 'users.accessto_tax' %}
-            <a href="{% url 'tax' %}"> Tax </a><br>
-        {% elif permission == 'users.accessto_new_hire' %}
-            <a href="{% url 'newhire' %}"> New Hire </a><br>
-        {% elif permission == 'users.accessto_on-boarding' %}
-            <a href="{% url 'onboarding' %}"> On Boarding</a><br>
-        {% elif permission == 'users.accessto_benefits' %}
-            <a href="{% url 'benefits' %}"> Benefits</a><br>
-        {% elif permission == 'users.accessto_payroll' %}
-            <a href="{% url 'payroll' %}"> Payroll</a><br>
-        {% elif permission == 'users.accessto_Terminations' %}
-            <a href="{% url 'terminations' %}"> Terminations</a><br>
-        {% elif permission == 'users.accessto_hr_reports' %}
-            <a href="{% url 'hrreports' %}"> HR Reports</a><br>
-        {% elif permission == 'users.accessto_application_monitoring' %}
-            <a href="{% url 'appmonitoring' %}"> Application Monitoring </a><br>
-        {% elif permission == 'users.accessto_tech_support' %}
-            <a href="{% url 'techsupport' %}"> Tech Support </a><br>
-        {% elif permission == 'users.accessto_app_development' %}
-            <a href="{% url 'appdev' %}"> App Development</a><br>
-        {% elif permission == 'users.accessto_app_admin' %}
-            <a href="{% url 'appadmin' %}"> App Admin</a><br>
-        {% elif permission == 'users.accessto_release_management' %}
-            <a href="{% url 'releasemanagement' %}"> Release Management</a><br>
+<div class = "row">
+    <div class="col s6">
+
+      Welcome {{ user.email }}!
+            </center>
+        </div>
+      <br><br>
+      {% if groups %}
+        {% if user.is_superuser %}
+          You are a superuser and have access to every link.
+        {% else %}
+    <div class="col s6">
+        <center>
+          Groups:
+          {% for group in groups %}
+            {{ group }} <br>
+            </center>
+          {% endfor %}
         {% endif %}
-    {% endfor %}
+    </div>
+</div>
+    <br><br>
+
+    <body>
+    <body style="background-color:lightgray;">
+    </body>
+    <div class="row">
+        <div class="col s12"><h1 style="background-color:rgba(122, 122, 122);"><center>Links:</center></h1></div>
+    </div>
+
+        <div class="container">
+
+            {% for permission in permissions %}
+                <div class="col s1">
+                     <h1 style="background-color:DarkGray;">
+                         <center>
+                             <p style="font-family: georgia; font-size:20px; font color = white">
+                                {% if permission == 'users.accessto_help_desk' %}
+                                    <a href="{% url 'helpdesk' %}" style = "color:white"> Help Desk</a><br>
+                                {% elif permission == 'users.accessto_manage_user_accounts' %}
+                                    <a href="{% url 'manageuseraccounts' %}"style = "color:white"> Manage User Accounts</a><br>
+                                {% elif permission == 'users.accessto_assign_roles' %}
+                                    <a href="{% url 'assignroles' %}"style = "color:white"> Assign Roles</a><br>
+                                {% elif permission == 'users.accessto_sales_reports' %}
+                                    <a href="{% url 'salesreport' %}"style = "color:white"> Sales Reports</a><br>
+                                {% elif permission == 'users.accessto_sales_leads' %}
+                                    <a href="{% url 'salesleads' %}"style = "color:white"> Sales Leads</a><br>
+                                {% elif permission == 'users.accessto_sales_demo' %}
+                                    <a href="{% url 'salesdemo' %}"style = "color:white"> Sales Demo</a><br>
+                                {% elif permission == 'users.accessto_finance_reports' %}
+                                    <a href="{% url 'financereports' %}"style = "color:white"> Finance Reports</a><br>
+                                {% elif permission == 'users.accessto_accounts_payable' %}
+                                    <a href="{% url 'accountspayable' %}"style = "color:white"> Accounts Payable</a><br>
+                                {% elif permission == 'users.accessto_accounts_receivable' %}
+                                    <a href="{% url 'accountsrecievable' %}"style = "color:white"> Accounts Receivable</a><br>
+                                {% elif permission == 'users.accessto_tax' %}
+                                    <a href="{% url 'tax' %}"style = "color:white"> Tax </a><br>
+                                {% elif permission == 'users.accessto_new_hire' %}
+                                    <a href="{% url 'newhire' %}"style = "color:white"> New Hire </a><br>
+                                {% elif permission == 'users.accessto_on-boarding' %}
+                                    <a href="{% url 'onboarding' %}"style = "color:white"> On Boarding</a><br>
+                                {% elif permission == 'users.accessto_benefits' %}
+                                    <a href="{% url 'benefits' %}"style = "color:white"> Benefits</a><br>
+                                {% elif permission == 'users.accessto_payroll' %}
+                                    <a href="{% url 'payroll' %}"style = "color:white"> Payroll</a><br>
+                                {% elif permission == 'users.accessto_Terminations' %}
+                                    <a href="{% url 'terminations' %}"style = "color:white"> Terminations</a><br>
+                                {% elif permission == 'users.accessto_hr_reports' %}
+                                    <a href="{% url 'hrreports' %}"style = "color:white"> HR Reports</a><br>
+                                {% elif permission == 'users.accessto_application_monitoring' %}
+                                    <a href="{% url 'appmonitoring' %}"style = "color:white"> Application Monitoring </a><br>
+                                {% elif permission == 'users.accessto_tech_support' %}
+                                    <a href="{% url 'techsupport' %}"style = "color:white"> Tech Support </a><br>
+                                {% elif permission == 'users.accessto_app_development' %}
+                                    <a href="{% url 'appdev' %}"style = "color:white"> App Development</a><br>
+                                {% elif permission == 'users.accessto_app_admin' %}
+                                    <a href="{% url 'appadmin' %}"style = "color:white"> App Admin</a><br>
+                                {% elif permission == 'users.accessto_release_management' %}
+                                    <a href="{% url 'releasemanagement' %}"style = "color:white"> Release Management</a><br>
+                                {% endif %}
+                             </p>
+                             </center>
+                       </h1>
+                </div>
+            {% endfor %}
+        </div>
+
   {% else %}
     You are not an admin, please contact an administrator for help.
   {% endif %}
